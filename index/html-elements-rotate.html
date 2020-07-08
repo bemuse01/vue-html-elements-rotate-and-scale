@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="assets/vue.min.js"></script>
+        <style>
+            div#points{
+                position: absolute;
+                width: 4px;
+                height: 4px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            div#points > div{
+                position: absolute;
+            }
+            div#points > div > div{
+                width: 4px;
+                height: 4px;
+                background: url('./assets/html-elements-rotate/image/circle.png') no-repeat center center / cover;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="points">
+                <div
+                    v-for="i in arr"
+                    :key="i.id"
+                    :style="i.style.parent"
+                ><div :style="i.style.child"></div>
+                </div>
+            </div>
+        </div>
+        <script src="assets/html-elements-rotate/js/main.js"></script>
+    </body>
+</html>
